@@ -92,6 +92,7 @@ _zsh_nvm_lazy_load() {
   cmds=(${(@q-)cmds%": "*})
 
   # Create function for each command
+  local cmd # Fix zsh-snap error when lazy loading
   for cmd in $cmds; do
 
     # When called, unset all lazy loaders, load nvm then run current command
